@@ -121,7 +121,7 @@ if [ -d "$d_j2me_roms" ]; then
          
          # try to import image
          if [ ! -f "$d_j2me_imgs/$j2me_imge" ] && [ -d "$d_j2me_impr" ] ; then
-            impr="$(ls -t "$d_j2me_impr" | grep "$j2me_base" | head -n 1 || true)"
+            impr="$(ls -t "$d_j2me_impr" | grep "${j2me_base}-" | head -n 1 || true)"
             [ -n "$impr" ] && cp "$d_j2me_impr/$impr" "$d_j2me_imgs/$j2me_imge"
          fi
          
